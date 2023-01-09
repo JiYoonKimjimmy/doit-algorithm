@@ -9,4 +9,11 @@ public class PrintUtil {
         System.out.println();
     }
 
+    public static <T> void print(T[] A) {
+        for (T a: A) {
+            System.out.print(a + " ");
+        }
+        System.out.println();
+    }
+
 }
