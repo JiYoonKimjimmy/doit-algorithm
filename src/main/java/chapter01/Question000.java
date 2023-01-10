@@ -12,10 +12,10 @@ public class Question000 {
 
     public static void main(String[] args) {
         int[] A = {5, 5, 3, 4, 2, 1};
-        solution1(A);
+        solution(A);
     }
 
-    private static void solution1(int[] A) {
+    private static void solution(int[] A) {
         for (int i = 0; i < A.length; i++) {
             for (int j = i + 1; j < A.length; j++) {
                 if (A[i] > A[j]) {
