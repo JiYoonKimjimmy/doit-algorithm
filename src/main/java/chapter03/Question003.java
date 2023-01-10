@@ -1,10 +1,8 @@
 package chapter03;
 
-import util.PrintUtil;
-
 /**
  * 문제 003. 구간 합 구하기
- * - 수 N 개의 i 번째 수에서 j 번째 수까지의 합을 구하는 프로그램을 작성하시오.
+ * 수 N 개의 i 번째 수에서 j 번째 수까지의 합을 구하는 프로그램을 작성하시오.
  * [Solution]
  * - 구간 합 공식 활용
  * [구간 합 공식]
@@ -28,8 +26,8 @@ public class Question003 {
         for (int i = 1; i < A.length; i++) {
             S[i + 1] = S[i] + A[i];
         }
-        int result = S[e] - S[s - 1];
-        System.out.println("result = " + result);
+        int answer = S[e] - S[s - 1];
+        System.out.println("answer = " + answer);
     }
 
 }

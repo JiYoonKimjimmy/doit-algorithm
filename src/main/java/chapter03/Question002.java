@@ -2,7 +2,7 @@ package chapter03;
 
 /**
  * 문제 002. 평균 구하기
- * - 기말고사를 망친 세준이의 점수 조작
+ * 기말고사를 망친 세준이의 점수 조작을 위한 프로그램을 작성하시오.
  * - 시험 점수 중 최댓값 : M
  * - 각 시험 점수 변환 공식 : X / M * 100
  * - 변환 공식으로 계산된 각 시험 점수의 평균 구하는 프로그램
@@ -42,8 +42,8 @@ public class Question002 {
             sum += score;
         }
 
-        double avg = sum / max * 100 / scores.length;
-        System.out.println("avg = " + avg);
+        double answer = sum / max * 100 / scores.length;
+        System.out.println("answer = " + answer);
     }
 
 }
