@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 public class PrintUtilTest {
 
     @Test
-    void int형_배열_print_테스트() {
+    void INT_배열_print_테스트() {
         int[] A = {1, 2, 3, 4, 5};
         print(A);
     }
