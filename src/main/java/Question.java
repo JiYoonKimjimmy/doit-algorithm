@@ -4,7 +4,7 @@
  * [Solution]
  * - 해결 내용
  */
-public class Template {
+public class Question {
 
     public static void main(String[] args) {
         solution();
