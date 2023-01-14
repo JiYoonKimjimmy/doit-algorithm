@@ -15,62 +15,64 @@ public class Question009 {
         solution("GATA", 2, new int[]{1, 0, 0, 1});
     }
 
-    private static void solution(String S, int N, int[] check) {
-        int answer = 0;
-        int[] myCheck = new int[check.length];
-        char[] A = S.toCharArray();
-        int size = 0;
+    private static int[] checkArr, myArr;
+    private static int checkSum;
 
-        for (int i = 0; i < A.length; i++) {
-            char c = A[i];
-            add(c, myCheck);
-            size++;
-            if (size == N) {
-                if (check(check, myCheck)) {
-                    answer++;
-                }
-                remove(A[i - (N - 1)], myCheck);
-                size--;
-            }
+    private static void solution(String S, int N, int[] _checkArr) {
+        System.out.println("S = " + S);
+        int answer = 0;
+        char[] A = S.toCharArray();
+        checkArr = _checkArr;
+        myArr = new int[checkArr.length];
+        checkSum = 0;
+
+        for (int check : checkArr) {
+            if (check == 0) checkSum++;
         }
 
-        if (check(check, myCheck)) {
-            answer++;
+        for (int i = 0; i < N; i++) {
+            add(A[i]);
+        }
+
+        for (int i = N; i < S.length(); i++) {
+            int j = i - N;
+            add(A[i]);
+            remove(A[j]);
+            if (checkSum == 4) answer++;
         }
 
         System.out.println("answer = " + answer);
     }
 
-    private static boolean check(int[] check, int[] myCheck) {
-        boolean result = true;
-        for (int i = 0; i < check.length; i++) {
-            int a = check[i];
-            int b = myCheck[i];
-
-            if (a > b) {
-                // 조건 불충족
-                result = false;
-                break;
-            }
-        }
-        return result;
-    }
-
-    private static void add(char c, int[] myCheck) {
+    private static void add(char c) {
         switch (c) {
-            case 'A' -> myCheck[0]++;
-            case 'C' -> myCheck[1]++;
-            case 'G' -> myCheck[2]++;
-            case 'T' -> myCheck[3]++;
+            case 'A' -> add(0);
+            case 'C' -> add(1);
+            case 'G' -> add(2);
+            case 'T' -> add(3);
         }
     }
 
-    private static void remove(char c, int[] myCheck) {
+    private static void add(int index) {
+        myArr[index]++;
+        if (myArr[index] >= checkArr[index]) {
+            checkSum++;
+        }
+    }
+
+    private static void remove(char c) {
         switch (c) {
-            case 'A' -> myCheck[0]--;
-            case 'C' -> myCheck[1]--;
-            case 'G' -> myCheck[2]--;
-            case 'T' -> myCheck[3]--;
+            case 'A' -> remove(0);
+            case 'C' -> remove(1);
+            case 'G' -> remove(2);
+            case 'T' -> remove(3);
+        }
+    }
+
+    private static void remove(int index) {
+        myArr[index]--;
+        if (myArr[index] == checkArr[index]) {
+            checkSum--;
         }
     }
 
