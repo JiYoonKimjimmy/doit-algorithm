@@ -7,10 +7,11 @@
 public class Question {
 
     public static void main(String[] args) {
-        solution();
+        Question question = new Question();
+        question.solution();
     }
 
-    private static void solution() {
+    private void solution() {
         int answer = 0;
 
         System.out.println("answer = " + answer);
