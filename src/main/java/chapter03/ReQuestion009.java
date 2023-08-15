@@ -1,7 +1,6 @@
 package chapter03;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 /**
  * 문제 009. DNA 비밀번호
