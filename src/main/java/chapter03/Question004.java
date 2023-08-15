@@ -3,7 +3,7 @@ package chapter03;
 import util.PrintUtil;
 
 /**
- * 문제 000. 구간 합 구하기 2
+ * 문제 004. 구간 합 구하기 2
  * N X N 표의 구간 좌표별 구간 합 구하기
  * [Solution]
  * - 주어진 좌표를 구간 합 새로운 좌표 배열 생성
